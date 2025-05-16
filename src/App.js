@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './pages/Landing';
 import ModeSelector from './pages/ModeSelector';
 import Quiz from './pages/Quiz';
@@ -13,6 +12,7 @@ function App() {
           <Route path="/h1" element={<ModeSelector level="h1" />} />
           <Route path="/h2" element={<ModeSelector level="h2" />} />
           <Route path="/quiz/:level/:mode" element={<Quiz />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
